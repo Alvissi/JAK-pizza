@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony's Pizza Corner - Order Online</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">🍕 JAK Pizza Corner</h1>
+      <p class="tagline">Hot, fresh, and delivered with love!</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    <div class="container nav-inner">
+      <button id="nav-order-btn" class="nav-btn active">🍕 Order</button>
+      <button id="nav-all-orders-btn" class="nav-btn">📋 All Orders</button>
+    </div>
+  </nav>
+
+  <div id="order-view">
+
+  <!-- WELCOME SECTION -->
+  <section class="welcome">
+    <div class="container">
+      <h2>Welcome!</h2>
+      <p>Pick your favorite pizza below, choose a quantity, and build your order.</p>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section class="menu-section">
+    <div class="container">
+      <h2 class="section-title">Our Menu</h2>
+      <div id="pizza-list" class="pizza-grid">
+        <!-- Pizza cards are inserted here by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER SUMMARY SECTION -->
+  <section class="order-section">
+    <div class="container">
+      <h2 class="section-title">Your Order</h2>
+
+      <div id="empty-order-msg" class="empty-msg">
+        No items yet. Add a pizza from the menu above!
+      </div>
+
+      <table id="order-table" class="order-table hidden">
+        <thead>
+          <tr>
+            <th>Pizza</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="order-table-body">
+          <!-- Order rows inserted here by script.js -->
+        </tbody>
+      </table>
+
+      <div id="order-total" class="order-total hidden">
+        Total: ₱<span id="total-amount">0.00</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER INFO SECTION -->
+  <section class="customer-section">
+    <div class="container">
+      <h2 class="section-title">Your Information</h2>
+      <form id="customer-form">
+        <div class="form-group">
+          <label for="customer-name">Full Name</label>
+          <input type="text" id="customer-name" placeholder="Juan Dela Cruz" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-contact">Contact Number</label>
+          <input type="tel" id="customer-contact" placeholder="09XX XXX XXXX" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-address">Delivery Address</label>
+          <textarea id="customer-address" placeholder="House/Unit No., Street, Barangay, City" required></textarea>
+        </div>
+        <button type="submit" id="place-order-btn" class="btn btn-primary">Place Order</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONFIRMATION SECTION -->
+  <section id="confirmation-section" class="confirmation-section hidden">
+    <div class="container">
+      <div class="confirmation-box">
+        <h2>🎉 Order Placed Successfully!</h2>
+        <p>Thank you, <span id="confirm-name"></span>! Your order has been received.</p>
+        <p>We will contact you at <span id="confirm-contact"></span>.</p>
+        <p>Delivering to: <span id="confirm-address"></span></p>
+
+        <h3>Order Details</h3>
+        <ul id="confirm-items"></ul>
+
+        <p class="confirm-total">Total Amount: ₱<span id="confirm-total"></span></p>
+
+        <button id="new-order-btn" class="btn btn-secondary">Place a New Order</button>
+      </div>
+    </div>
+  </section>
+
+  </div> <!-- /#order-view -->
+
+  <!-- ALL ORDERS SECTION (view of every order placed so far, like a food-delivery app's order list) -->
+  <section id="all-orders-view" class="all-orders-section hidden">
+    <div class="container">
+      <h2 class="section-title">All Orders</h2>
+
+      <div id="no-orders-msg" class="empty-msg">
+        No orders have been placed yet.
+      </div>
+
+      <div id="all-orders-list" class="all-orders-list"></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 JAK Pizza Corner. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
